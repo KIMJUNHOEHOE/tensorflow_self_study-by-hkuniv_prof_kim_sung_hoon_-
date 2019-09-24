@@ -1,0 +1,27 @@
+# training/Testing 데이타셋
+
+# training dataset
+- model을 학습시키기 위한 dataset
+- 해당 모델로 학습시키고 테스트까지 한다면, 대부분의 모델은 정확도가 매우 높게 나옴
+
+# Test dataset
+- training dataset을 가지고 모델을 학습시킨 후, 완벽히 독립적인 데이타셋으로 모델의 성능을 평가하는 척도
+
+# learning rate : 경사하강에서 얼마나 내려갈지 정하는 step의 크기
+- learning rate이 너무 크다면(1) cost가 발산하게 됨 => cost에 Nan 값이 나오면 의심
+- learning rate이 너무 작다면(0.001) local minimum이 있다면 local minimum에 수렴하게 되거나 최소값에 수렴하는 학습 시간이 오래 걸려 마지막 학습 step에서 cost값이 최소값으로 착각하게 됨
+=> cost값이 너무 조금씩 줄어들면 의심
+
+# Non- normalized inputs
+- learning rate를 적정하게 하더라도 cost가 Nan이 발생하는 경우가 있음
+- 자료의 단위가 크게 차이날 경우 발생
+- w1,w2의 그래프를 그렸을때 원형이 아니라 타원형처럼 치우칠 경우 발산하게 됨(한 쪽에 가중치가 클 경우)
+
+# solution
+- normalized 실시
+- ex) MinMaxScaler(xy)를 통해 조정(제일 작은값을 0, 제일 큰 값을 1로) normalized 됨
+- ex) regularization을 통해 regular strength 부여.
+- normalized 실시하게 되면 w1,w2와 같은 가중치 그래프를 그렸을 때 원형 형태
+
+
+

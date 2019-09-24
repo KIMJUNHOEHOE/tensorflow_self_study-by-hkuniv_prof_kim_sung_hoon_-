@@ -1,0 +1,31 @@
+- learning rate를 처음에 잘 정하는 것이 중요함(data, 상황에 따라 다름)
+
+# overshooting
+learning rate를 너무 크게 잡으면 cost convex ftn에서 발산함(cost값이 발산함)
+# small learning rate
+learning rate를 너무 작게 잡으면 시간이 지나 멈췄을 때 cost가 최저점이 아닐 수도 있음
+=> cost가 너무 조금씩 내려간다 싶으면 learning rate을 올려야함
+
+- for gradient descent를 위한 데이터 전처리
+x1, x2 값의 단위가 너무 차이날 경우 normalize할 필요가 있음
+=> Standardization이 필요(통계 표준화)
+python code
+# 모든 데이터에 적용하려면 0을 for문으로
+x_std[:,0] = (x[x:,0] - x[:,0].mean())/x[:,0].std()
+
+- overfitting
+머신러닝은 학습을 통해서 모델을 만들어감
+test set이 overfitting이 되면 test set은 잘 맞지만 새로운 prediction은 잘 안 맞는 경우가 있음
+overfitting은 선형으로 분류하는 것이 아니라 곡선으로 분류하는것
+
+# solution of overfitting
+(1) training data를 많게 한다.
+
+(2) 중복된 특징을 가지는 데이터를 없앰
+
+(3) regularization - 곡선으로 분류하지 말고 선형으로 좀 펴!!(W가 너무 한 쪽에 치우치면 곡선 분류가 됨)
+    l2reg = 0.001*tf.reduce_sum(tf.square(W)) # 0.001 - regularization strength
+
+    cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1)) + 12reg
+    => 한 쪽에 가중치가 크게 들어가면 제곱을 통해 cost가 커짐
+    => 가중치가 한 쪽에 치우치지 않도록 해야 cost가 줄어들 것임

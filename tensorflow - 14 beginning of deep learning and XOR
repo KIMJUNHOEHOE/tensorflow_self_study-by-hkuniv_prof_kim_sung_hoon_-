@@ -1,0 +1,42 @@
+# 아직 이론이 많이 부족하다!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# deep learning
+- 기계가 인간의 생각 방식과 동일하게 동작하도록 만들면 좋겠다는 것에서 시작
+- 뉴런을 activation functions처럼 만들면 되겠다. 자극의 역치
+- activation function 값이 일정 값보다 크면 1, 작으면 0 처럼
+
+# Percept theory
+# AND/XOR 로직 문제
+
+# XOR => back propagation(역전파)이 나오기 전까지 linear하게 구분할 경우 Y를 출력할 수 없었음
+x1 x2 y
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+
+# AND
+x1 x2 y
+0 0 0
+0 1 0
+1 0 0 
+1 1 1
+
+# 역전파의 문제, 딥러닝의 문제
+- 히든 레이어가 여러 개일 경우 vanishing problem 발생
+- vanishing problem : sigmoid 함수나 tanh 함수의 경우 0과 1사이의 값을 갖기 때문에 input값으로 갈수록 input의 가중치가 거의 없어지는 문제
+
+
+# CNN
+- 시신경은 부분부분 인식해서 뇌를 통해서 조합된다.
+- 알파고도 CNN 사용
+
+# cost함수의 최저점을 찾는 것이 목표(최저점은 0이 아님. cost의 최저점은 0이 아닌 값으로 존재할 수 있음)
+
+# RNN - Recurrent NN
+- 기존의 forward 형태의 NN뿐 아니라, 옆으로 네트워크를 확장시킬 수도 있지 않을까?
+
+# CNN - Convolutional NN
+- 기존의 forward 형태의 NN은 입력값을 한 번에 입력.
+- CNN의 경우 입력값을 여러 개로 나누어 입력한 후, 중간에서 합치는 형태
+- IMage Deep learning에 적합한 형태

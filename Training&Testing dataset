@@ -1,0 +1,9 @@
+전체 데이터셋 중에서
+
+Training dataset - 70% : Model 생성
+
+Test dataset - 30% : Model의 성능 확인
+
+Online learning
+- 새로운 데이터가 추가되었을 때 기존의 학습결과에 더해 머신러닝 하는 기법
+
